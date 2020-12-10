@@ -1,15 +1,14 @@
 $("document").ready(function() {
 
-
     $(".images").each(function() {
         var slider = $(this),
             slides = slider.find("img"),
             totalSlides = slides.length,
             currIndex = 0,
 
-            intervalTime = 5000,
+            intervalTime = 2500,
             sliderInterval;
-        startSlider(intervalTime = 10000);
+        startSlider(intervalTime = 5000);
 
 
         function cycleItems() {
@@ -21,8 +20,6 @@ $("document").ready(function() {
             // $(".facons i").css("color", "yellow");
 
         }
-
-
         function changeSlide() {
             currIndex += 1;
 
@@ -51,7 +48,7 @@ $("document").ready(function() {
             }
 
             cycleItems();
-            startSlider(intervalTime = 10000);
+            startSlider(intervalTime = 5000);
         });
 
 
@@ -61,48 +58,31 @@ $("document").ready(function() {
             if (currIndex < 0) {
                 currIndex = totalSlides - 1;
             }
-
-
+            
             cycleItems();
-            startSlider(intervalTime = 10000);
+            startSlider(intervalTime = 5000);
         });
         $(".current").on("click", function() {
             currIndex = 1;
             cycleItems();
 
-            startSlider(intervalTime = 10000);
+            startSlider(intervalTime = 5000);
         });
         $(".nextt").on("click", function() {
             currIndex = 2;
 
-
-
             cycleItems();
-            startSlider(intervalTime = 10000);
+            startSlider(intervalTime = 5000);
         });
         $(".prevv").on("click", function() {
             currIndex = 0;
 
             cycleItems();
-            startSlider(intervalTime = 10000);
+            startSlider(intervalTime = 5000);
         });
-
-
-
-
-
-
-
-
 
     });
 });
-
-
-
-
-
-
 $(document).scroll(function(e) {
     var scrollAmount = $(window).scrollTop();
     var documentHeight = $(document).height();
